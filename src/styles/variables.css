@@ -1,0 +1,73 @@
+
+:root {
+  /* --- Brand colors --- */
+  --color-ink-50: #f3f5f9;
+  --color-ink-100: #e2e7f0;
+  --color-ink-200: #c4cce0;
+  --color-ink-300: #9aa7c7;
+  --color-ink-400: #6c7da8;
+  --color-ink-500: #4a5d8a;
+  --color-ink-600: #364670;
+  --color-ink-700: #2a3559;
+  --color-ink-800: #1b2a4a;
+  --color-ink-900: #131d35;
+
+  --color-paper-50: #fefdfb;
+  --color-paper-100: #faf7f0;
+  --color-paper-200: #f3ede0;
+  --color-paper-300: #e8ddc8;
+
+  --color-seal-50: #fdf2e9;
+  --color-seal-100: #f9dec0;
+  --color-seal-300: #e8a560;
+  --color-seal-500: #c2702d;
+  --color-seal-600: #a35a22;
+  --color-seal-700: #7e451b;
+
+  --color-sage-50: #eef5f0;
+  --color-sage-300: #8fbf9f;
+  --color-sage-500: #3a7256;
+  --color-sage-700: #275039;
+
+  --color-danger-50: #fbeceb;
+  --color-danger-500: #b3392f;
+  --color-danger-700: #872a22;
+
+  --color-slate-50: #f4f5f6;
+  --color-slate-300: #aab1bd;
+  --color-slate-500: #5b6472;
+  --color-slate-700: #3a4250;
+
+  /* --- Semantic tokens --- */
+  --color-background: var(--color-paper-100);
+  --color-surface: var(--color-paper-50);
+  --color-border-default: var(--color-paper-300);
+  --color-text-primary: var(--color-ink-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-accent: var(--color-seal-500);
+  --color-accent-hover: var(--color-seal-600);
+  --color-success: var(--color-sage-500);
+  --color-danger: var(--color-danger-500);
+
+  /* --- Typography --- */
+  --font-display: "Fraunces", "Source Serif 4", Georgia, serif;
+  --font-sans: "IBM Plex Sans", "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* --- Radius / shadow --- */
+  --radius-card: 14px;
+  --shadow-card: 0 2px 8px rgba(27, 42, 74, 0.06), 0 1px 2px rgba(27, 42, 74, 0.04);
+  --shadow-card-hover: 0 8px 24px rgba(27, 42, 74, 0.10), 0 2px 4px rgba(27, 42, 74, 0.06);
+
+  /* --- Container --- */
+  --container-page: 1280px;
+}
+
+/* Dark mode overrides (class-based, toggled manually if a theme toggle is added later) */
+.dark {
+  --color-background: var(--color-ink-900);
+  --color-surface: var(--color-ink-800);
+  --color-border-default: var(--color-ink-700);
+  --color-text-primary: var(--color-paper-100);
+  --color-text-secondary: var(--color-ink-300);
+}

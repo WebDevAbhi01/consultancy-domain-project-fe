@@ -12,3 +12,11 @@ export interface Milestone {
   title: string
   description: string
 }
+
+export interface CompanyValue {
+  id: string
+  title: string
+  description: string
+  icon: string 
+}
+ 
