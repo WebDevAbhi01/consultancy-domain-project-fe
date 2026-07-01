@@ -9,14 +9,14 @@ export type AsyncStatus =
   | "error"
   | "success";
 
-export interface NavLink {
+export interface NavLinks {
   label: string;
   href: string;
 }
 
 export interface FooterLink {
   title: string;
-  links: NavLink[];
+  links: NavLinks[];
 }
 
 export interface SocialLink {
