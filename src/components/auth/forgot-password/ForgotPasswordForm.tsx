@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Loader2, MailCheck } from "lucide-react"
 import { z } from "zod"
 import { Input } from "../../ui/input/Input"
 import { wait } from "../../../lib/helpers/helpers"
-import { cn } from ".././../../lib/utils/utils"
+import { cn } from "../../../lib/utils/utils"
 
 const schema = z.object({
   email: z.string().min(1, "Email is required").email("Enter a valid email address"),
@@ -34,26 +34,22 @@ export function ForgotPasswordForm() {
   if (isSubmitted) {
     return (
       <div className="space-y-6 text-center">
-        <div className="mx-auto flex size-14 items-center justify-center rounded-full border border-[var(--color-border-default)] bg-[var(--color-sage-50)]">
-          <MailCheck className="size-6 text-[var(--color-sage-500)]" strokeWidth={1.75} />
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[var(--color-border-default)] bg-[var(--color-sage-50)]">
+          <MailCheck className="h-6 w-6 text-[var(--color-sage-500)]" strokeWidth={1.75} />
         </div>
         <div>
-          <p className="text-base font-medium text-[var(--color-text-primary)]">
-            Check your inbox
-          </p>
+          <p className="text-base font-medium text-[var(--color-text-primary)]">Check your inbox</p>
           <p className="mt-2 text-sm text-[var(--color-text-secondary)]">
-            We've sent a reset link to{" "}
-            <span className="font-medium text-[var(--color-text-primary)]">
-              {getValues("email")}
-            </span>
-            . It expires in 30 minutes.
+            We've sent a reset link to{' '}
+            <span className="font-medium text-[var(--color-text-primary)]">{getValues("email")}</span>.
+            It expires in 30 minutes.
           </p>
         </div>
         <Link
           to="/login"
           className="inline-flex items-center gap-2 text-sm text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-accent)]"
         >
-          <ArrowLeft className="size-3.5" />
+          <ArrowLeft className="h-3.5 w-3.5" />
           Back to sign in
         </Link>
       </div>
@@ -80,21 +76,21 @@ export function ForgotPasswordForm() {
         type="submit"
         disabled={isSubmitting}
         className={cn(
-          "flex w-full items-center justify-center gap-2.5",
+          "flex w-full items-center justify-center gap-2.5 rounded-2xl",
           "bg-[var(--color-ink-900)] py-4",
           "text-sm font-medium tracking-wide text-[var(--color-paper-100)]",
-          "transition-colors duration-200",
+          "transition duration-200",
           "hover:bg-[var(--color-accent)] hover:text-white",
           "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]",
           "disabled:opacity-60 disabled:cursor-not-allowed"
         )}
       >
         {isSubmitting ? (
-          <Loader2 className="size-4 animate-spin" />
+          <Loader2 className="h-4 w-4 animate-spin" />
         ) : (
           <>
             Send reset link
-            <ArrowRight className="size-4" strokeWidth={2} />
+            <ArrowRight className="h-4 w-4" strokeWidth={2} />
           </>
         )}
       </button>
@@ -104,7 +100,7 @@ export function ForgotPasswordForm() {
           to="/login"
           className="inline-flex items-center gap-1.5 text-sm text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-accent)]"
         >
-          <ArrowLeft className="size-3.5" />
+          <ArrowLeft className="h-3.5 w-3.5" />
           Back to sign in
         </Link>
       </div>

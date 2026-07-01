@@ -9,7 +9,7 @@ export function AuthLayout() {
   }
 
   return (
-    <div className="min-h-screen bg-[var(--color-grey-100)]">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(59,148,94,0.16),_transparent_24%),linear-gradient(180deg,_#f6fbf7_0%,_#ffffff_100%)]">
       <Outlet />
     </div>
   )

@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import { Footer } from "@/components/layout/Footer"
 import { Header } from "@/components/layout/Header"
+import { StickyChatButton } from "@/components/common/StickyChatButton"
 
 export function AppLayout() {
   return (
@@ -10,6 +11,7 @@ export function AppLayout() {
         <Outlet />
       </main>
       <Footer />
+      <StickyChatButton />
     </div>
   )
 }

@@ -1,14 +1,19 @@
-import { AuthLayout } from "../layouts/AuthLayout"
-import { AppLayout } from "../layouts/AppLayout"
-import PublicLayout from "../layouts/PublicLayout"
-import { ForgotPasswordPage } from "@/pages/ForgetPasswordPage"
-import HomePage from "@/pages/HomePage"
-import { LoginPage } from "@/pages/LoginPage"
-import PageNotFound from "@/pages/PageNotFound"
-import { SignupPage } from "@/pages/SignUpPage"
-import { Routes, Route } from "react-router-dom"
-import { ProtectedRoute } from "./ProtectedRoute"
-import { DashboardPlaceholder } from "@/pages/DashboardPlaceholder"
+import { Routes, Route } from "react-router-dom";
+import { AuthLayout } from "../layouts/AuthLayout";
+import { AppLayout } from "../layouts/AppLayout";
+import PublicLayout from "../layouts/PublicLayout";
+import { ForgotPasswordPage } from "@/pages/ForgetPasswordPage";
+import HomePage from "@/pages/HomePage";
+import { LoginPage } from "@/pages/LoginPage";
+import PageNotFound from "@/pages/PageNotFound";
+import { SignupPage } from "@/pages/SignUpPage";
+import { ProtectedRoute } from "./ProtectedRoute";
+import { DashboardPlaceholder } from "@/pages/DashboardPlaceholder";
+import { TeamPage } from "../../src/pages/TeamPage";
+import { InsightsPage } from "@/pages/InsightsPage";
+import { AchievementsPage } from "@/pages/AchievementsPage";
+import { ServicesPage } from "@/pages/ServicesPage";
+import { AboutPage } from "@/pages/AboutPage";
 
 export function AppRoutes() {
   return (
@@ -17,10 +22,11 @@ export function AppRoutes() {
         {/* ── Public marketing site ── */}
         <Route element={<PublicLayout />}>
           <Route index element={<HomePage />} />
-          {/* <Route path="about" element={<AboutPage />} /> */}
-          {/* <Route path="services" element={<ServicesPage/>} /> */}
-          {/* <Route path="services/:slug" element={<ServiceDetailPage />} /> */}
-          {/* <Route path="contact" element={<ContactPage />} /> */}
+          <Route path="services" element={<ServicesPage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="team" element={<TeamPage />} />
+          <Route path="insights" element={<InsightsPage />} />
+          <Route path="achievements" element={<AchievementsPage />} />
         </Route>
 
         {/* ── Auth pages (no public nav, redirect to dashboard if already logged in) ── */}
@@ -39,5 +45,5 @@ export function AppRoutes() {
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
-  )
+  );
 }

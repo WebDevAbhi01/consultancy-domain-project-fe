@@ -11,5 +11,4 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   rightIcon?: ReactNode
   children?: ReactNode
   as?: ElementType
-  [key: string]: unknown
 }

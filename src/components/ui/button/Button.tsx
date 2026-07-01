@@ -58,13 +58,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const isDisabled = disabled || isLoading
-    const tag = Component as ElementType
+    const Tag = Component as ElementType
 
     return (
-      <tag
+      <Tag
         ref={ref}
-        disabled={tag === "button" ? isDisabled : undefined}
-        aria-disabled={tag !== "button" && isDisabled ? true : undefined}
+        disabled={Tag === "button" ? isDisabled : undefined}
+        aria-disabled={Tag !== "button" && isDisabled ? true : undefined}
         className={cn(
           "inline-flex items-center justify-center font-medium rounded-lg",
           "transition-all duration-150 cursor-pointer select-none",
@@ -83,7 +83,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         {children && <span>{children}</span>}
         {!isLoading && rightIcon && <span className="shrink-0">{rightIcon}</span>}
-      </tag>
+      </Tag>
     )
   }
 )

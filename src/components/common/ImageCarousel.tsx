@@ -44,14 +44,6 @@ export function ImageCarousel({
     setActiveIndex(index);
   };
 
-  const handlePrevious = () => {
-    setActiveIndex((current) => (current - 1 + pageCount) % pageCount);
-  };
-
-  const handleNext = () => {
-    setActiveIndex((current) => (current + 1) % pageCount);
-  };
-
   if (pageCount === 0) return null;
 
   return (

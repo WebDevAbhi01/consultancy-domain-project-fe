@@ -1,9 +1,9 @@
-import type { NavLink, SocialLink,FooterLink} from "../../types/common.types"
+import type { NavLinks, SocialLink, FooterLink } from "../../types/common.types"
 
 export const SITE_NAME = "Sanction & Co."
 export const SITE_TAGLINE = "Government subsidy and loan consultancy"
 
-export const NAV_LINKS: NavLink[] = [
+export const NAV_LINKS: NavLinks[] = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
