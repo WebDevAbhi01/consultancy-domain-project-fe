@@ -1,0 +1,8 @@
+[build]
+  base = "consultancy-frontend"
+  publish = "dist"
+  command = "npm run build"
+
+[context.production.environment]
+# ensure node_modules are installed in the frontend folder
+  NPM_FLAGS = "--prefix consultancy-frontend"
