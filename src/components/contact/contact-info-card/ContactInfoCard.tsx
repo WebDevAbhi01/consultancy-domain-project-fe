@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react"
-import { CONTACT_INFO } from "@/lib/constants"
+import { CONTACT_INFO } from "../../../lib/constants/constants"
 
 const items = [
   {
