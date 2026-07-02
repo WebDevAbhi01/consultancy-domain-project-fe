@@ -1,16 +1,15 @@
 import { FAQAccordion } from "@/components/common/FAQAccordion";
 import { ImageCarousel } from "@/components/common/ImageCarousel";
-import { TestimonialsSection } from "@/components/common/Testimonial";
+import { Testimonial } from "../components/common/Testimonial";
+import ServiceShowcase from "@/pages/ServicesShowCard";
 
 export default function HomePage() {
-
   return (
     <>
+      <ServiceShowcase />
       <ImageCarousel />
-      <TestimonialsSection />
-      <div className="mt-24 w-full">
-        <FAQAccordion />
-      </div>
+      <Testimonial />
+      <FAQAccordion />
     </>
   );
 }

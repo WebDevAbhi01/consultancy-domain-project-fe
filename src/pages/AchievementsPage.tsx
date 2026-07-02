@@ -8,6 +8,7 @@ import {
   CaseStudyCard,
   AwardCard,
 } from "@/components/achievements/AwardCard"
+import { PageBanner } from "@/components/common/PageBanner"
 import { SectionHeading } from "@/components/common/SectionHeading"
 import { ArrowRight } from "lucide-react"
 import { Link } from "react-router-dom"
@@ -15,22 +16,11 @@ import { Link } from "react-router-dom"
 export function AchievementsPage() {
   return (
     <div className="bg-[var(--color-background)]">
-
-      {/* ── Hero ── */}
-      <section className="bg-[var(--color-forest-900)] px-6 py-20 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal-400)]">
-            Track record
-          </p>
-          <h1 className="mt-4 max-w-2xl text-4xl font-medium text-white sm:text-5xl">
-            Results we've delivered for Indian manufacturers.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-white/60">
-            Numbers built case by case, file by file — across 12 years,
-            11 states, and every major manufacturing segment.
-          </p>
-        </div>
-      </section>
+      <PageBanner
+        eyebrow="Track record"
+        title="Results we've delivered for Indian manufacturers."
+        description="Numbers built case by case, file by file — across 12 years, 11 states, and every major manufacturing segment."
+      />
 
       {/* ── Stats grid ── */}
       <section className="mx-auto max-w-6xl px-6 py-20 lg:px-10">

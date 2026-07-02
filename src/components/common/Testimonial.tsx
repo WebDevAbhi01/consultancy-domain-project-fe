@@ -38,7 +38,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   )
 }
 
-export function TestimonialsSection() {
+export function Testimonial() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {

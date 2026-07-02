@@ -2,6 +2,7 @@ import { useState } from "react"
 import { dummyInsights } from "@/data/dummyInsights"
 import { InsightCard } from "@/components/insights/InsightCard"
 import { InsightFilter } from "@/components/insights/InsightFilter"
+import { PageBanner } from "@/components/common/PageBanner"
 import { SectionHeading } from "@/components/common/SectionHeading"
 import { Search } from "lucide-react"
 
@@ -25,30 +26,21 @@ export function InsightsPage() {
 
   return (
     <div className="bg-[var(--color-background)]">
-
-      {/* ── Hero ── */}
-      <section className="bg-[var(--color-forest-900)] px-6 py-20 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal-400)]">
-            Insights
-          </p>
-          <h1 className="mt-4 max-w-2xl text-4xl font-medium text-white sm:text-5xl">
-            Practical guidance for manufacturers navigating subsidies and loans.
-          </h1>
-
-          {/* Search bar */}
-          <div className="relative mt-10 max-w-lg">
-            <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-white/40" />
-            <input
-              type="search"
-              placeholder="Search articles…"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl bg-white/10 py-3 pl-11 pr-4 text-sm text-white placeholder:text-white/40 outline-none ring-1 ring-white/10 transition-all focus:bg-white/15 focus:ring-[var(--color-teal-400)]"
-            />
-          </div>
+      <PageBanner
+        eyebrow="Insights"
+        title="Practical guidance for manufacturers navigating subsidies and loans."
+      >
+        <div className="relative mt-10 w-full max-w-lg">
+          <Search className="absolute left-4 top-1/2 size-4 -translate-y-1/2 text-white/40" />
+          <input
+            type="search"
+            placeholder="Search articles…"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full rounded-xl bg-white/10 py-3 pl-11 pr-4 text-sm text-white placeholder:text-white/40 outline-none ring-1 ring-white/10 transition-all focus:bg-white/15 focus:ring-[var(--color-teal-400)]"
+          />
         </div>
-      </section>
+      </PageBanner>
 
       {/* ── Filter + Articles ── */}
       <section className="mx-auto max-w-6xl px-6 py-16 lg:px-10">

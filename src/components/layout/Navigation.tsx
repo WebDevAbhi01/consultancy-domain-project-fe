@@ -13,6 +13,10 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Contact",      href: "/contact"      },
   { label: "Team",         href: "/team"         },
   { label: "Achievements", href: "/achievements" },
+  { label: "Plans", href: "/plans" },
+  { label: "Values", href: "/Values" },
+
+
 ]
 
 interface NavigationProps {
