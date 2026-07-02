@@ -1,13 +1,15 @@
-import * as Icons from "lucide-react"
-import type { LucideIcon } from "lucide-react"
-import { Link } from "react-router-dom"
-import { ArrowRight, Briefcase, Banknote, FileCheck2 } from "lucide-react"
-import { SectionHeading } from "@/components/common/SectionHeading"
-import { dummyServices } from "@/data/dummyServices"
-import type { Service } from "@/types/service.types"
+import * as Icons from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { ArrowRight, Briefcase, Banknote, FileCheck2 } from "lucide-react";
+import { PageBanner } from "@/components/common/PageBanner";
+import { SectionHeading } from "@/components/common/SectionHeading";
+import { dummyServices } from "@/data/dummyServices";
+import type { Service } from "@/types/service.types";
 
 function ServiceCard({ service }: { service: Service }) {
-  const Icon = (Icons[service.icon as keyof typeof Icons] as LucideIcon) ?? Icons.Briefcase
+  const Icon =
+    (Icons[service.icon as keyof typeof Icons] as LucideIcon) ??
+    Icons.Briefcase;
 
   return (
     <article className="group flex flex-col gap-6 rounded-[28px] border border-[var(--color-grey-200)] bg-white p-8 transition duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)]">
@@ -15,8 +17,12 @@ function ServiceCard({ service }: { service: Service }) {
         <Icon className="size-6" strokeWidth={1.75} />
       </div>
       <div>
-        <h3 className="text-xl font-semibold text-[var(--color-forest-900)]">{service.title}</h3>
-        <p className="mt-4 text-sm leading-7 text-[var(--color-text-secondary)]">{service.shortDescription}</p>
+        <h3 className="text-xl font-semibold text-[var(--color-forest-900)]">
+          {service.title}
+        </h3>
+        <p className="mt-4 text-sm leading-7 text-[var(--color-text-secondary)]">
+          {service.shortDescription}
+        </p>
       </div>
       <ul className="space-y-2 text-sm text-[var(--color-text-secondary)]">
         {service.highlights.map((highlight) => (
@@ -29,39 +35,26 @@ function ServiceCard({ service }: { service: Service }) {
         ))}
       </ul>
     </article>
-  )
+  );
 }
 
 export function Services() {
   return (
     <div className="bg-[var(--color-background)]">
-      <section className="bg-[var(--color-forest-900)] px-6 py-20 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal-400)]">
-            Services
-          </p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-medium text-white sm:text-5xl">
-            Advisory services for growth, compliance, and funding.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-white/70">
-            From government subsidy strategy to bank loan support and compliance management, we help manufacturers move from planning to approval faster.
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-[var(--color-green-500)] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[var(--color-green-400)]"
-            >
-              Book a consultation
-            </Link>
-            <div className="inline-flex items-center gap-2 text-sm text-white/70">
-              <Briefcase className="size-4" />
-              Advisory for manufacturing, loans, and compliance.
-            </div>
-          </div>
+      <PageBanner
+        eyebrow="Services"
+        title="Advisory services for growth, compliance, and funding."
+        description="From government subsidy strategy to bank loan support and compliance management, we help manufacturers move from planning to approval faster."
+        ctaLabel="Book a consultation"
+        ctaTo="/contact"
+      >
+        <div className="inline-flex items-center gap-2 text-sm text-white/70">
+          <Briefcase className="size-4" />
+          <span>Advisory for manufacturing, loans, and compliance.</span>
         </div>
-      </section>
+      </PageBanner>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 lg:px-10">
+      <section className="section-heading mx-auto max-w-6xl px-6 py-20 lg:px-10">
         <SectionHeading
           eyebrow="What we do"
           title="Services designed around real manufacturing needs"
@@ -83,9 +76,13 @@ export function Services() {
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal-400)]">
               Why choose us?
             </p>
-            <h2 className="mt-4 text-3xl font-semibold">Closer to your business, not just your paperwork.</h2>
+            <h2 className="mt-4 text-3xl font-semibold">
+              Closer to your business, not just your paperwork.
+            </h2>
             <p className="mt-5 text-sm leading-7 text-white/70">
-              We combine technical subsidy knowledge with practical financing and compliance support, so your case stays moving and your team stays focused.
+              We combine technical subsidy knowledge with practical financing
+              and compliance support, so your case stays moving and your team
+              stays focused.
             </p>
           </div>
 
@@ -94,9 +91,12 @@ export function Services() {
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-[var(--color-green-500)]/10 text-[var(--color-green-500)]">
                 <Banknote className="size-5" strokeWidth={1.75} />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-[var(--color-forest-900)]">Bank loan readiness</h3>
+              <h3 className="mt-6 text-xl font-semibold text-[var(--color-forest-900)]">
+                Bank loan readiness
+              </h3>
               <p className="mt-3 text-sm leading-7 text-[var(--color-text-secondary)]">
-                We prepare bank-grade project reports, structure term sheets, and coordinate directly with lenders.
+                We prepare bank-grade project reports, structure term sheets,
+                and coordinate directly with lenders.
               </p>
             </div>
 
@@ -104,9 +104,12 @@ export function Services() {
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-[var(--color-forest-900)]/10 text-[var(--color-forest-900)]">
                 <FileCheck2 className="size-5" strokeWidth={1.75} />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-[var(--color-forest-900)]">Compliance support</h3>
+              <h3 className="mt-6 text-xl font-semibold text-[var(--color-forest-900)]">
+                Compliance support
+              </h3>
               <p className="mt-3 text-sm leading-7 text-[var(--color-text-secondary)]">
-                We keep subsidy and loan documents organised, audit-ready, and filed on time across every phase.
+                We keep subsidy and loan documents organised, audit-ready, and
+                filed on time across every phase.
               </p>
             </div>
           </div>
@@ -115,13 +118,16 @@ export function Services() {
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-[var(--color-teal-400)]/10 text-[var(--color-teal-400)]">
               <ArrowRight className="size-5" strokeWidth={1.75} />
             </div>
-            <h3 className="mt-6 text-xl font-semibold text-[var(--color-forest-900)]">One partner, one process</h3>
+            <h3 className="mt-6 text-xl font-semibold text-[var(--color-forest-900)]">
+              One partner, one process
+            </h3>
             <p className="mt-3 text-sm leading-7 text-[var(--color-text-secondary)]">
-              We stay involved beyond the application — from first eligibility checks to final fund release.
+              We stay involved beyond the application — from first eligibility
+              checks to final fund release.
             </p>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }

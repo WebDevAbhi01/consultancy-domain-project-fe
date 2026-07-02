@@ -1,35 +1,29 @@
 import { Link } from "react-router-dom"
 import { ArrowRight, ShieldCheck, Sparkles, Users } from "lucide-react"
+import { PageBanner } from "@/components/common/PageBanner"
 import { SectionHeading } from "@/components/common/SectionHeading"
 
 export function About() {
   return (
     <div className="bg-[var(--color-background)]">
-      <section className="bg-[var(--color-forest-900)] px-6 py-20 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal-400)]">
-            About us
-          </p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-medium text-white sm:text-5xl">
-            Practical advisory for manufacturing, finance, and long-term compliance.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-white/70">
-            We help Indian manufacturers access subsidy funds, secure bank credit, and stay audit-ready across every stage of project execution.
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-[var(--color-green-500)] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[var(--color-green-400)]"
-            >
-              Contact our team
-            </Link>
-            <div className="inline-flex items-center gap-2 text-sm text-white/70">
-              <Users className="size-4" />
-              Experienced consultants with domain knowledge and delivery focus.
-            </div>
+      <PageBanner
+        eyebrow="About us"
+        title="Practical advisory for manufacturing, finance, and long-term compliance."
+        description="We help Indian manufacturers access subsidy funds, secure bank credit, and stay audit-ready across every stage of project execution."
+      >
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center rounded-xl bg-[var(--color-green-500)] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[var(--color-green-400)]"
+          >
+            Contact our team
+          </Link>
+          <div className="inline-flex items-center gap-2 text-sm text-white/70">
+            <Users className="size-4" />
+            Experienced consultants with domain knowledge and delivery focus.
           </div>
         </div>
-      </section>
+      </PageBanner>
 
       <section className="mx-auto max-w-6xl px-6 py-20 lg:px-10">
         <SectionHeading

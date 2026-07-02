@@ -1,5 +1,6 @@
 import { dummyTeam, dummyCompanyValues } from "@/data/dummyTeam"
 import { TeamMemberCard } from "../components/team/TeamMemberCard"
+import { PageBanner } from "@/components/common/PageBanner"
 import { SectionHeading } from "../components/common/SectionHeading"
 import * as Icons from "lucide-react"
 import type { LucideIcon } from "lucide-react"
@@ -10,33 +11,21 @@ export function TeamPage() {
   return (
     <div className="bg-[var(--color-background)]">
 
-      {/* ── Hero ── */}
-      <section className="bg-[var(--color-forest-900)] px-6 py-20 lg:px-10 lg:py-28">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-teal-400)]">
-            Our team
-          </p>
-          <h1 className="mt-4 max-w-2xl text-4xl font-medium text-white sm:text-5xl">
-            People who file, not just advise.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-white/60">
-            Every case at Sanction & Co. is handled by a specialist who has
-            worked through the same process dozens of times — not handed to a
-            junior after the first meeting.
-          </p>
-
-          {/* Quick stat */}
-          <div className="mt-10 flex items-center gap-3">
-            <span className="flex size-10 items-center justify-center rounded-xl bg-white/10 text-[var(--color-teal-400)]">
-              <Users className="size-5" strokeWidth={1.75} />
-            </span>
-            <div>
-              <p className="text-lg font-semibold text-white">12+ years</p>
-              <p className="text-sm text-white/50">of combined consultancy experience</p>
-            </div>
+      <PageBanner
+        eyebrow="Our team"
+        title="People who file, not just advise."
+        description="Every case at Sanction & Co. is handled by a specialist who has worked through the same process dozens of times — not handed to a junior after the first meeting."
+      >
+        <div className="mt-10 flex items-center justify-center gap-3">
+          <span className="flex size-10 items-center justify-center rounded-xl bg-white/10 text-[var(--color-teal-400)]">
+            <Users className="size-5" strokeWidth={1.75} />
+          </span>
+          <div>
+            <p className="text-lg font-semibold text-white">12+ years</p>
+            <p className="text-sm text-white/50">of combined consultancy experience</p>
           </div>
         </div>
-      </section>
+      </PageBanner>
 
       {/* ── Team grid ── */}
       <section className="mx-auto max-w-6xl px-6 py-20 lg:px-10">
